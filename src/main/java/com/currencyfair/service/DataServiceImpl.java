@@ -14,12 +14,12 @@ public class DataServiceImpl implements DataService{
 	@Autowired
 	DataDao transactionDao;
 	
-	@Autowired
+	@Override
 	public int saveTransaction(CurrencyTransaction transaction){
 		return transactionDao.saveTransaction(transaction);
 	}
 	
-	@Autowired
+	@Override
 	public List<CurrencyTransaction> getCurrencyTransactions()
 	{
 		return transactionDao.getCurrencyTransactions();

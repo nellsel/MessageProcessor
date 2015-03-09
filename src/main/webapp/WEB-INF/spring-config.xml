@@ -11,7 +11,7 @@
 	<context:property-placeholder location="classpath:database.properties"></context:property-placeholder>
 	<mvc:annotation-driven />
 
-	<bean id="datasource"
+	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="${database.driver}" />
 		<property name="url" value="${database.url}" />
