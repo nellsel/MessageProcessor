@@ -5,12 +5,12 @@
 <html>  
 <head>  
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
-<title>Being Java Guys | User Details</title>  
+<title>CurrencyFair Message Processor | Currency Transactions</title>  
 </head>  
 <body>  
  <center>  
   
-  <div style="color: teal; font-size: 30px">CurrencyFair Message Proccessor </div>  
+  <div style="color: teal; font-size: 30px">CurrencyFair Message Processor </div>  
   
   <c:if test="${!empty transactionList}">  
    <table border="1" bgcolor="black" width="600px">  
@@ -44,7 +44,7 @@
       </td>
       <td><c:out value="${transaction.rate}" />  
       </td> 
-      <td><c:out value="${transaction.timePlaced}" pattern="dd-mm-yyyy hh:mm:ss"/>  
+      <td><c:out value="${transaction.timePlaced}"/>  
       </td> 
       <td><c:out value="${transaction.originatingCountry}" />  
       </td>  

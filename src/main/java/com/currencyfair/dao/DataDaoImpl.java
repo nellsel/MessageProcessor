@@ -18,10 +18,10 @@ public class DataDaoImpl implements DataDao{
 	SessionFactory sessionFactory;
 	
 	@Override
+	@SuppressWarnings("unchecked")
 	public List<CurrencyTransaction> getCurrencyTransactions() {
 		Session session = sessionFactory.openSession();
-		@SuppressWarnings("unchecked")
-		List<CurrencyTransaction> transactionList = session.createQuery("from").list();
+		List<CurrencyTransaction> transactionList = session.createQuery("from CurrencyTransaction").list();
 		session.close();
 		return transactionList;
 	}
@@ -37,5 +37,17 @@ public class DataDaoImpl implements DataDao{
 		session.close();
 		
 		return (Integer)id;
+	}
+
+	@Override
+	public int deleteTransaction(int id) {
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		CurrencyTransaction transaction = (CurrencyTransaction) session.load(CurrencyTransaction.class, id);
+		session.delete(transaction);
+		tx.commit();
+		Serializable ids = session.getIdentifier(transaction);
+		session.close();
+		return (Integer) ids;
 	}
 }

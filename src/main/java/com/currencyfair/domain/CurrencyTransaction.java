@@ -1,7 +1,7 @@
 package com.currencyfair.domain;
 
 import java.util.Date;
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,40 +9,39 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
-@Table(name="transaction")
-public class CurrencyTransaction {
+@Table(name = "transaction")
+public class CurrencyTransaction{
 
-	private static final String DATE_FORMAT_DATABASE = "yyyy-MM-dd HH:mm:ss";
-	
 	@Id
 	@GeneratedValue
 	private int id;
 
-	@Column(name = "user_id")
+	@JsonFormat(shape=JsonFormat.Shape.STRING)
 	private int userId;
-
-	@Column(name = "currency_from")
+	
+	@JsonFormat(shape=JsonFormat.Shape.STRING)
 	private String currencyFrom;
 
-	@Column(name = "currency_to")
+	@JsonFormat(shape=JsonFormat.Shape.STRING)
 	private String currencyTo;
 
-	@Column(name = "amount_sell", precision=10, scale=2)
+	@JsonFormat(shape=JsonFormat.Shape.STRING)
 	private double amountSell;
 
-	@Column(name = "amount_buy", precision=10, scale=2)
+	@JsonFormat(shape=JsonFormat.Shape.STRING)
 	private double amountBuy;
 
-	@Column(precision=10, scale=4)
+	@JsonFormat(shape=JsonFormat.Shape.STRING)
 	private double rate;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "time_placed")
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MMM-yyyy HH:mm:ss")
 	private Date timePlaced;
 
-	@Column(name = "originating_country")
+	@JsonFormat(shape=JsonFormat.Shape.STRING)
 	private String originatingCountry;
 
 	public void setId(int id) {
@@ -113,6 +112,7 @@ public class CurrencyTransaction {
 		return rate;
 	}
 
+	
 	public Date getTimePlaced() {
 		return timePlaced;
 	}
@@ -120,5 +120,4 @@ public class CurrencyTransaction {
 	public String getOriginatingCountry() {
 		return originatingCountry;
 	}
-
 }
