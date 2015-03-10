@@ -10,6 +10,8 @@
 	<context:component-scan base-package="com.currencyfair.controller"></context:component-scan>
 	<context:property-placeholder location="classpath:database.properties"></context:property-placeholder>
 	<mvc:annotation-driven />
+	
+	<mvc:resources location="/resources/" mapping="/resources/**"/>
 
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -69,5 +71,7 @@
 
 	<bean id="dataDaoImpl" class="com.currencyfair.dao.DataDaoImpl" />
 	<bean id="dataServiceImpl" class="com.currencyfair.service.DataServiceImpl" />
+	
+	
 
 </beans>

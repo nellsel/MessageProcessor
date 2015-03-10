@@ -1,0 +1,109 @@
+@import
+	url(http://fonts.googleapis.com/css?family=Montserrat:300,400,700);
+
+body {
+	padding: 0 2em;
+	font-family: Montserrat, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	color: #444;
+	background: #eee;
+}
+
+h1 {
+	font-weight: normal;
+	letter-spacing: -1px;
+	color: #34495E;
+}
+
+tr {
+	border-bottom-color: rgb(70, 98, 127);
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-collapse: collapse;
+	border-left-color: rgb(70, 98, 127);
+	border-right-color: rgb(70, 98, 127);
+	border-top-color: rgb(70, 98, 127);
+	border-top-style: solid;
+	border-top-width: 1px;
+	color: rgb(255, 255, 255);
+	display: table-row;
+	vertical-align: middle;
+	width: 6.5em;
+}
+
+th {
+	border-collapse: collapse;
+	color: rgb(221, 221, 85);
+	display: table-cell;
+	font-weight: bold;
+	margin-bottom: 8px;
+	margin-left: 16px;
+	margin-right: 16px;
+	margin-top: 8px;
+	padding-bottom: 16px;
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	text-align: left;
+	vertical-align: middle;
+}
+
+td {
+	border-collapse: collapse;
+	color: rgb(255, 255, 255);
+	display: table-cell;
+	margin-bottom: 8px;
+	margin-left: 16px;
+	margin-right: 16px;
+	margin-top: 8px;
+	padding-bottom: 16px;
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 16px;
+	text-align: left;
+	vertical-align: middle;
+}
+
+th:first-child, td:first-child{
+	padding-left: 0;
+}
+
+th:last-child, td:last-child{
+	padding-left: 0;
+}
+
+
+.rwd-table {
+	-webkit-background-clip: border-box;
+	-webkit-background-origin: padding-box;
+	-webkit-background-size: auto;
+	-webkit-border-horizontal-spacing: 0px;
+	-webkit-border-vertical-spacing: 0px;
+	-webkit-font-smoothing: antialiased;
+	background-attachment: scroll;
+	background-clip: border-box;
+	background-color: rgb(52, 73, 94);
+	background-image: none;
+	background-origin: padding-box;
+	background-size: auto;
+	border-bottom-color: rgb(128, 128, 128);
+	border-bottom-left-radius: 6.40000009536743px;
+	border-bottom-right-radius: 6.40000009536743px;
+	border-collapse: collapse;
+	border-left-color: rgb(128, 128, 128);
+	border-right-color: rgb(128, 128, 128);
+	border-top-color: rgb(128, 128, 128);
+	border-top-left-radius: 6.40000009536743px;
+	border-top-right-radius: 6.40000009536743px;
+	color: rgb(255, 255, 255);
+	display: table;
+	margin-bottom: 16px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 16px;
+	min-height: 100px;
+	min-width: 300px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}

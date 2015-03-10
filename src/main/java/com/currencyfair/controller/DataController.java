@@ -41,9 +41,9 @@ public class DataController {
 
 	@ExceptionHandler(Exception.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
+	@RequestMapping("error")
 	public ModelAndView handleException(HttpServletRequest req, Exception exception)
 	{
-		return new ModelAndView("redirect:error");
+		return new ModelAndView("error");
 	}
-	
 }
