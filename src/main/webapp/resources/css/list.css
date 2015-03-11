@@ -28,6 +28,7 @@ tr {
 	border-top-width: 1px;
 	color: rgb(255, 255, 255);
 	display: table-row;
+	min-width: 480px;
 	vertical-align: middle;
 	width: 6.5em;
 }
@@ -65,16 +66,16 @@ td {
 	vertical-align: middle;
 }
 
-th:first-child, td:first-child{
+th:first-child,td:first-child {
 	padding-left: 0;
 }
 
-th:last-child, td:last-child{
+th:last-child,td:last-child {
 	padding-left: 0;
 }
-
 
 .rwd-table {
+	float: left;
 	-webkit-background-clip: border-box;
 	-webkit-background-origin: padding-box;
 	-webkit-background-size: auto;
@@ -106,4 +107,11 @@ th:last-child, td:last-child{
 	min-width: 300px;
 	overflow-x: hidden;
 	overflow-y: hidden;
+	-webkit-background-clip: border-box;
+}
+
+#chart_div {
+	width: 900px;
+	height: 500px;
+	float: right;
 }

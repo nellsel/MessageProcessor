@@ -60,7 +60,8 @@
 	<bean
 		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
 		<property name="messageConverters">
-			<list><ref bean="jsonMessageConverter"/>
+			<list>
+			<ref bean="jsonMessageConverter"/>
 			</list>
 		</property>
 	</bean>
@@ -68,10 +69,9 @@
 	<bean id="jsonMessageConverter"
 		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
 	</bean>
+	
 
 	<bean id="dataDaoImpl" class="com.currencyfair.dao.DataDaoImpl" />
 	<bean id="dataServiceImpl" class="com.currencyfair.service.DataServiceImpl" />
-	
-	
 
 </beans>

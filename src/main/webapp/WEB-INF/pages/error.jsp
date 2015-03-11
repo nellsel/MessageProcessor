@@ -6,11 +6,14 @@
 <head>  
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
 <title>CurrencyFair Message Processor | Currency Transactions</title>  
+<link href="<c:url value="/resources/css/list.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/normalize.css" />" rel="stylesheet">
+<script src="<c:url value="/resources/js/jquery-1.11.2.min.js" />"></script>
+<script src="<c:url value="/resources/js/main.js" />"></script>
 </head>  
 <body>  
- <center>  
   
-  <div style="color: teal; font-size: 30px">CurrencyFair Message Processor </div>  
+  <h1>CurrencyFair Message Processor </h1>  
   <span>
 			An error has occured, please contact the support team.
   </span>
@@ -18,6 +21,5 @@
   <a href="${pageContext.request.contextPath}">Back to the application</a>
   
   
- </center>  
 </body>  
 </html>  
