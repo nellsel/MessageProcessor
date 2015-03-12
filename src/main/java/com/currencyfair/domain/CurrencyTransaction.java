@@ -21,7 +21,7 @@ public class CurrencyTransaction{
 
 	@JsonFormat(shape=JsonFormat.Shape.STRING)
 	private int userId;
-	
+
 	@JsonFormat(shape=JsonFormat.Shape.STRING)
 	private String currencyFrom;
 
@@ -112,7 +112,7 @@ public class CurrencyTransaction{
 		return rate;
 	}
 
-	
+
 	public Date getTimePlaced() {
 		return timePlaced;
 	}

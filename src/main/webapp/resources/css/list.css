@@ -114,4 +114,8 @@ th:last-child,td:last-child {
 	width: 900px;
 	height: 500px;
 	float: right;
+	margin-bottom: 16px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 16px;
 }
