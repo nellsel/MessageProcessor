@@ -28,7 +28,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("file:src/main/webapp/WEB-INF/spring-config.xml")
+@ContextConfiguration("file:src/test/resources/test-spring-config.xml")
 public class DataControllerTest extends
 		AbstractTransactionalJUnit4SpringContextTests {
 
@@ -48,7 +48,7 @@ public class DataControllerTest extends
 
 	}
 
-	@Test//(expected=RestClientException.class)
+	@Test
 	public void testSaveTransaction() {
 
 		int nTransactionsStart = transactionDao.getCurrencyTransactions()

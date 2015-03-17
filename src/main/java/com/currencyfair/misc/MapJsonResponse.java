@@ -1,4 +1,4 @@
-package com.currencyfair.domain;
+package com.currencyfair.misc;
 
 import java.util.ArrayList;
 import java.util.Arrays;

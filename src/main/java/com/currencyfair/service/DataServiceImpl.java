@@ -25,4 +25,10 @@ public class DataServiceImpl implements DataService{
 		return transactionDao.getCurrencyTransactions();
 	}
 	
+	@Override
+	public int deleteTransaction(int id)
+	{
+		return transactionDao.deleteTransaction(id);
+	}
+	
 }

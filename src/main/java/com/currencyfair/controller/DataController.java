@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.currencyfair.domain.CurrencyTransaction;
-import com.currencyfair.domain.MapJsonResponse;
+import com.currencyfair.misc.MapJsonResponse;
 import com.currencyfair.service.DataService;
 
 @Controller

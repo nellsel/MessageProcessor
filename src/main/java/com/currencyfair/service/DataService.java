@@ -9,4 +9,7 @@ public interface DataService {
 	public int saveTransaction(CurrencyTransaction transaction);
 
 	public List<CurrencyTransaction> getCurrencyTransactions();
+	
+	public int deleteTransaction(int id);
+		
 }
