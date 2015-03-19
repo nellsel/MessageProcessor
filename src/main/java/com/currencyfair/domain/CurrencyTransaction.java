@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -23,9 +24,11 @@ public class CurrencyTransaction{
 	private int userId;
 
 	@JsonFormat(shape=JsonFormat.Shape.STRING)
+	@Size(max = 3)
 	private String currencyFrom;
 
 	@JsonFormat(shape=JsonFormat.Shape.STRING)
+	@Size(max = 3)
 	private String currencyTo;
 
 	@JsonFormat(shape=JsonFormat.Shape.STRING)
@@ -42,6 +45,7 @@ public class CurrencyTransaction{
 	private Date timePlaced;
 
 	@JsonFormat(shape=JsonFormat.Shape.STRING)
+	@Size(max = 3)
 	private String originatingCountry;
 
 	public void setId(int id) {
