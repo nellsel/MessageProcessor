@@ -19,6 +19,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.web.client.*;
 
 import com.currencyfair.dao.DataDao;
@@ -29,6 +30,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/test/resources/test-spring-config.xml")
+@TransactionConfiguration(defaultRollback = true)
 public class DataControllerTest extends
 		AbstractTransactionalJUnit4SpringContextTests {
 
@@ -54,7 +56,6 @@ public class DataControllerTest extends
 		int nTransactionsStart = transactionDao.getCurrencyTransactions()
 				.size();
 
-		String requestBody = this.resourceBundle.getString("testSendMoney");
 		CurrencyTransaction transaction = new CurrencyTransaction();
 		transaction.setUserId(13);
 		transaction.setCurrencyFrom("USD");

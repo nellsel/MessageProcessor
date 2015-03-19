@@ -4,8 +4,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import javax.transaction.Transactional;
-
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -20,7 +18,6 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 
-import com.currencyfair.dao.DataDao;
 import com.currencyfair.dao.DataDaoTest;
 import com.currencyfair.domain.CurrencyTransaction;
 

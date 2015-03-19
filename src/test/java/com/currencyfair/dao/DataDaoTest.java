@@ -2,9 +2,7 @@ package com.currencyfair.dao;
 
 import java.util.Date;
 import java.util.List;
-import java.util.ResourceBundle;
 
-import org.h2.util.IntIntHashMap;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -16,12 +14,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.currencyfair.domain.CurrencyTransaction;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/test/resources/test-spring-config.xml")
+@TransactionConfiguration(defaultRollback = true)
 public class DataDaoTest extends
 		AbstractTransactionalJUnit4SpringContextTests {
 
@@ -30,7 +30,6 @@ public class DataDaoTest extends
 
 	@Autowired
 	JdbcTemplate jdbcTemplate;
-	private ResourceBundle resourceBundle;
 	private static final Logger logger = LoggerFactory
 			.getLogger(DataDaoTest.class);
 

@@ -1,5 +1,6 @@
 package com.currencyfair.controller;
 
+import java.sql.SQLDataException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -31,12 +33,11 @@ public class DataController {
 			.getLogger(DataController.class);
 
 	@RequestMapping(value = "/sendMoney", method = RequestMethod.POST)
-	public @ResponseBody ModelAndView sendMoney(
+	public @ResponseBody String sendMoney(
 			@RequestBody CurrencyTransaction transaction) {
 		logger.info("Start sendMoney");
 		dataService.saveTransaction(transaction);
-		return new ModelAndView("redirect:list");
-
+		return "Saved transaction with User Id:" + transaction.getUserId();
 	}
 
 	@RequestMapping("list")
@@ -63,7 +64,7 @@ public class DataController {
 		return jsonRes;
 	}
 
-	@ExceptionHandler(Exception.class)
+	@ExceptionHandler({SQLDataException.class,DataAccessException.class})
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	@RequestMapping("error")
 	public ModelAndView handleException(HttpServletRequest req,
