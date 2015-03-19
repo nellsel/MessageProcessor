@@ -64,7 +64,7 @@ public class DataController {
 		return jsonRes;
 	}
 
-	@ExceptionHandler({SQLDataException.class,DataAccessException.class})
+	@ExceptionHandler(Exception.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	@RequestMapping("error")
 	public ModelAndView handleException(HttpServletRequest req,
